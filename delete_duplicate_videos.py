@@ -15,7 +15,7 @@ def authenticate(client_secret_file, scopes):
     # time.
 
     script_dir_path = os.path.dirname(__file__)
-    token_file = os.path.join(script_dir_path, "token.json")
+    token_file = os.path.join(script_dir_path, "secrets/token.json")
     if os.path.exists(token_file):
         creds = Credentials.from_authorized_user_file(token_file)
     # If there are no (valid) credentials available, let the user log in.
@@ -102,7 +102,7 @@ def main():
     else:
         play_list_name = sys.argv[1]
 
-    CLIENT_SECRETS_FILE = "client_secrets.json"
+    CLIENT_SECRETS_FILE = "secrets/client_secrets.json"
     # このOAuth 2.0のスコープは，ログインしたアカウントのあらゆる操作を許可する
     YOUTUBE_SCOPE = "https://www.googleapis.com/auth/youtube"
     YOUTUBE_API_SERVICE_NAME = "youtube"
