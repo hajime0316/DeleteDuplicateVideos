@@ -7,7 +7,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 
-def authenticate(client_secret_file, scopes):
+def authorization(client_secret_file, scopes):
     creds = None
 
     # The file token.json stores the user's access and refresh tokens, and is
@@ -109,7 +109,7 @@ def main():
     YOUTUBE_API_VERSION = "v3"
 
     # 証明書の取得 (ログイン)
-    creds = authenticate(CLIENT_SECRETS_FILE, YOUTUBE_SCOPE)
+    creds = authorization(CLIENT_SECRETS_FILE, YOUTUBE_SCOPE)
 
     # YouTubeリソースの作成
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
